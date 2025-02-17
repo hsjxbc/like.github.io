@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .wai {
+            margin: 200px auto;
+            width: 400px;
+            height: 600px;
+            text-align: center;
+
+        }
+
+        .but>button {
+            background-color: #1795bb;
+            border-radius: 12px;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .but>button:hover {
+            background-color: #fff;
+            color: #1795bb;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wai">
+        <div class="img"><img src="./img/开心的豆丁.png" alt="" id="img"></div>
+        <h2 id="text">可不可做我的女朋友！</h2>
+        <div class="but">
+            <button id="ky">可以</button>
+            <button id="bky">不可以</button>
+
+        </div>
+    </div>
+
+    <script>
+        $('#bky').click(function () {
+            var a = $('#ky').css('font-size');
+            var s = parseInt(a.replace(/[^0-9]/ig, ""))
+            if (s == 16) {
+                $('#bky').text("在考虑一下嘛?")
+                $('#img').attr('src', './img/疑惑的豆丁.png')
+            }
+            else if (s == 21) {
+                $('#bky').text("你认真的吗？")
+                $('#img').attr('src', './img/委屈的豆丁.png')
+
+            } else if (s == 26) {
+                $('#bky').text("必须同意！！")
+
+                $('#img').attr('src', './img/气鼓鼓的豆丁.png')
+            } else if (s == 31) {
+                $('#bky').text("想好再选嘛！！")
+                $('#img').attr('src', './img/难过的豆丁.png')
+            }
+            $('#ky').css('font-size', s + 5);
+            console.log(s)
+
+            if (s > 90) {
+                $('#bky').hide()
+            }
+
+
+        })
+
+        $('#ky').click(function () {
+            $('#text').html("宝宝 我最最最最爱你啦")
+        })
+
+    </script>
+</body>
+
+</html>
